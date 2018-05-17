@@ -112,6 +112,16 @@ function parseOptions(options) {
   } else {
     options.addTimestamp = options.addTimestamp === true;
   }
+
+  if (options.oomAfterHeapSnapshotHandler === undefined) {
+    options.oomAfterHeapSnapshotHandler = (/* snapshotPath */) => { /* no-op */ };
+  } else if (typeof options.oomAfterHeapSnapshotHandler !== 'function') {
+    throw new Error('Option oomAfterHeapSnapshotHandler must be a function');
+  }
+
+  if (options.oomBlockMs === undefined) {
+    options.oomBlockMs = 5000;
+  }
 }
 
 function checkPort(port) {

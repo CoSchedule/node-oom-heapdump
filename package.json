@@ -4,7 +4,7 @@
   "description": "Create a V8 heap snapshot when an \"Out of Memory\" error occurs, or create a heap snapshot or CPU profile on request.",
   "main": "index.js",
   "scripts": {
-    "test": "node --max_old_space_size=80 --optimize_for_size --always_compact --inspect tests\\oom_app.js"
+    "test": "node --max_old_space_size=80 --optimize_for_size --always_compact --inspect tests/oom_app.js"
   },
   "repository": {
     "type": "git",
